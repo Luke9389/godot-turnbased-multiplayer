@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://cridg53t1wfd0"]
+
+[ext_resource type="Theme" uid="uid://domfa6uq1f32u" path="res://styles/main_theme.tres" id="1_c2hyu"]
+[ext_resource type="Script" path="res://scenes/lobby_ui.gd" id="2_7xtyn"]
+
+[node name="LobbyUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_c2hyu")
+script = ExtResource("2_7xtyn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 500
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="PlayerName" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Player Name"
+alignment = 1
+
+[node name="CreateGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Create Game"
+
+[node name="JoinGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Join Game"
+
+[node name="ErrorLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "Must enter a name to continue..."
+horizontal_alignment = 1
+
+[node name="HSeperator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/PlayerName" to="." method="_on_player_name_text_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CreateGame" to="." method="_on_create_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/JoinGame" to="." method="_on_join_game_pressed"]

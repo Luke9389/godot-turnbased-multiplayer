@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvgcggjtdenpb"]
+
+[ext_resource type="Script" path="res://scenes/mover.gd" id="1_ghnot"]
+[ext_resource type="Texture2D" uid="uid://djyib5v5jc3jk" path="res://icon.svg" id="2_wujc5"]
+[ext_resource type="Script" path="res://game_object.gd" id="3_oqouu"]
+[ext_resource type="Theme" uid="uid://domfa6uq1f32u" path="res://styles/main_theme.tres" id="4_o2jq6"]
+
+[node name="Mover" type="Node2D"]
+script = ExtResource("1_ghnot")
+
+[node name="GameObject" type="Sprite2D" parent="."]
+position = Vector2(721, 842)
+texture = ExtResource("2_wujc5")
+script = ExtResource("3_oqouu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 68.0
+offset_top = 1086.0
+offset_right = 847.0
+offset_bottom = 1183.0
+theme = ExtResource("4_o2jq6")
+
+[node name="MoveToOne" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MOVE TO ONE"
+
+[node name="MoveToTwo" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MOVE TO TWO"
+
+[node name="MoveToThree" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MOVE TO THREE"
+
+[node name="Location" type="Label" parent="."]
+offset_left = 149.0
+offset_top = 186.0
+offset_right = 298.0
+offset_bottom = 257.0
+theme = ExtResource("4_o2jq6")
+text = "ONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Location2" type="Label" parent="."]
+offset_left = 614.0
+offset_top = 440.0
+offset_right = 763.0
+offset_bottom = 511.0
+theme = ExtResource("4_o2jq6")
+text = "TWO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Location3" type="Label" parent="."]
+offset_left = 169.0
+offset_top = 806.0
+offset_right = 318.0
+offset_bottom = 877.0
+theme = ExtResource("4_o2jq6")
+text = "THREE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoButton" type="Button" parent="."]
+offset_left = 91.0
+offset_top = 1219.0
+offset_right = 813.0
+offset_bottom = 1317.0
+theme = ExtResource("4_o2jq6")
+theme_type_variation = &"GreenButton"
+text = "GO!"
+
+[connection signal="pressed" from="HBoxContainer/MoveToOne" to="." method="_on_move_to_one_pressed"]
+[connection signal="pressed" from="HBoxContainer/MoveToTwo" to="." method="_on_move_to_two_pressed"]
+[connection signal="pressed" from="HBoxContainer/MoveToThree" to="." method="_on_move_to_three_pressed"]
+[connection signal="pressed" from="GoButton" to="." method="_on_go_button_pressed"]

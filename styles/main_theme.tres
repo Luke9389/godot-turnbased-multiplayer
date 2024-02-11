@@ -1,0 +1,33 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://domfa6uq1f32u"]
+
+[ext_resource type="StyleBox" uid="uid://cy424cevqiyc8" path="res://styles/medium_purple_box.tres" id="1_18qng"]
+[ext_resource type="StyleBox" uid="uid://thhjx8hyxo58" path="res://styles/purple_box.tres" id="1_iyt1h"]
+[ext_resource type="StyleBox" uid="uid://ywa6pu45i6xs" path="res://styles/light_purple_box.tres" id="2_cwc3i"]
+[ext_resource type="StyleBox" uid="uid://dvr1a2xqu7mg3" path="res://styles/light_green_box.tres" id="3_ckr7e"]
+[ext_resource type="StyleBox" uid="uid://2muysrwcmlgx" path="res://styles/green_box.tres" id="3_qefda"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmxsc"]
+bg_color = Color(0.435294, 0.137255, 0.184314, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.964706, 0.729412, 0.760784, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[resource]
+default_font_size = 25
+/font_sizes/size = 40
+Button/styles/hover = ExtResource("1_iyt1h")
+Button/styles/normal = ExtResource("1_18qng")
+Button/styles/pressed = ExtResource("2_cwc3i")
+GreenButton/base_type = &"Button"
+GreenButton/styles/hover = ExtResource("3_ckr7e")
+GreenButton/styles/normal = ExtResource("3_qefda")
+GreenButton/styles/pressed = ExtResource("3_qefda")
+Label/styles/normal = SubResource("StyleBoxFlat_jmxsc")
+LineEdit/styles/normal = ExtResource("3_qefda")
+PurpleButton/base_type = &"Button"
